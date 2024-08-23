@@ -1,5 +1,5 @@
 {% set name = "gguf" %}
-{% set version = "0.6.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/gguf-{{ version }}.tar.gz
-  sha256: b2e22eaba2a106c1ad148186a14ad9f29c429351686fe9d7ce16df39a0607e65
+  sha256: 52a30ef26328b419ffc47d9269fc580c238edf1c8a19b5ea143c323e04a038c1
 
 build:
   noarch: python
