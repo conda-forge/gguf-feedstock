@@ -3,7 +3,7 @@ About gguf-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gguf-feedstock/blob/main/LICENSE.txt)
 
-Home: https://ggml.ai
+
 
 Package license: MIT
 
@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@sodre](https://github.com/sodre/)
+* [@wolfv](https://github.com/wolfv/)
 
