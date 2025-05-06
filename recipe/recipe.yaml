@@ -1,6 +1,6 @@
 context:
   name: gguf
-  version: "0.14.0"
+  version: "0.16.3"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/gguf-${{ version }}.tar.gz
-  sha256: d9996f197a777831cf9e01efac24cbfa817787375305b8c4ee16074778e2bce8
+  sha256: ee6b827bf83c899fe8276bec276c43a6f6b1c8b8027efbebfa4c8fa852a5d3d5
 
 build:
   noarch: python
