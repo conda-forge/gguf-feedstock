@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   python:
     entry_points:
       - gguf-convert-endian = "scripts:gguf_convert_endian_entrypoint"
@@ -30,7 +30,6 @@ requirements:
     - numpy >=1.17
     - tqdm >=4.27
     - pyyaml >=5.1
-    - sentencepiece >=0.1.98,<=0.2.0
 
 tests:
   - python:
