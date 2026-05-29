@@ -13,12 +13,7 @@ source:
 build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
-  number: 1
-  python:
-    entry_points:
-      - gguf-convert-endian = "scripts:gguf_convert_endian_entrypoint"
-      - gguf-dump = "scripts:gguf_dump_entrypoint"
-      - gguf-set-metadata = "scripts:gguf_set_metadata_entrypoint"
+  number: 2
 
 requirements:
   host:
@@ -35,6 +30,11 @@ tests:
   - python:
       imports:
         - gguf
+  - script:
+      - gguf-convert-endian --help
+      - gguf-dump --help
+      - gguf-set-metadata --help
+      - gguf-new-metadata --help
 
 about:
   homepage: https://ggml.ai
