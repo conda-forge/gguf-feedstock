@@ -16,25 +16,35 @@ build:
   number: 0
   python:
     entry_points:
-      - gguf-convert-endian = "scripts:gguf_convert_endian_entrypoint"
-      - gguf-dump = "scripts:gguf_dump_entrypoint"
-      - gguf-set-metadata = "scripts:gguf_set_metadata_entrypoint"
+      - gguf-convert-endian = gguf.scripts.gguf_convert_endian:main
+      - gguf-dump = gguf.scripts.gguf_dump:main
+      - gguf-set-metadata = gguf.scripts.gguf_set_metadata:main
+      - gguf-new-metadata = gguf.scripts.gguf_new_metadata:main
+      # gguf-editor-gui needs PySide6, which is intentionally not a run
+      # dependency; install pyside6 manually to use the GUI editor.
+      - gguf-editor-gui = gguf.scripts.gguf_editor_gui:main
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - pip
     - poetry-core
   run:
-    - python >=3.8
+    - python >=3.10
     - numpy >=1.17
     - tqdm >=4.27
     - pyyaml >=5.1
+    - requests >=2.25
 
 tests:
   - python:
       imports:
         - gguf
+  - script:
+      - gguf-convert-endian --help
+      - gguf-dump --help
+      - gguf-set-metadata --help
+      - gguf-new-metadata --help
 
 about:
   homepage: https://ggml.ai
