@@ -14,6 +14,15 @@ build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   number: 2
+  python:
+    entry_points:
+      - gguf-convert-endian = gguf.scripts.gguf_convert_endian:main
+      - gguf-dump = gguf.scripts.gguf_dump:main
+      - gguf-set-metadata = gguf.scripts.gguf_set_metadata:main
+      - gguf-new-metadata = gguf.scripts.gguf_new_metadata:main
+      # gguf-editor-gui needs PySide6, which is intentionally not a run
+      # dependency; install pyside6 manually to use the GUI editor.
+      - gguf-editor-gui = gguf.scripts.gguf_editor_gui:main
 
 requirements:
   host:
